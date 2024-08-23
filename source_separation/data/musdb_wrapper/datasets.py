@@ -12,9 +12,9 @@ import random
 class MusdbLoader(object):
 
     def __init__(self, musdb_root='data/musdb18_wav/', is_wav=True):
-        self.musdb_train = musdb.DB(root=musdb_root, subsets="train", split='train', is_wav=is_wav)
-        self.musdb_valid = musdb.DB(root=musdb_root, subsets="train", split='valid', is_wav=is_wav)
-        self.musdb_test = musdb.DB(root=musdb_root, subsets="test", is_wav=is_wav)
+        self.musdb_train = musdb.DB(download=True,root=musdb_root, subsets="train", split='train', is_wav=is_wav)
+        self.musdb_valid = musdb.DB(download=True,root=musdb_root, subsets="train", split='valid', is_wav=is_wav)
+        self.musdb_test = musdb.DB(download=True,root=musdb_root, subsets="test", is_wav=is_wav)
 
         if len(self.musdb_train) > 0:
             pass
